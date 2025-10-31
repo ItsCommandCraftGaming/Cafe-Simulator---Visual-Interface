@@ -1,0 +1,29 @@
+{
+    "java.project.sourcePaths": [
+        "src"
+    ],
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": [
+        "d:\\Javafx\\lib\\javafx-swt.jar",
+        "d:\\Javafx\\lib\\javafx.fxml.jar",
+        "d:\\Javafx\\lib\\javafx.swing.jar",
+        "d:\\Javafx\\lib\\javafx.web.jar",
+        "d:\\Javafx\\lib\\javafx.controls.jar",
+        "d:\\Javafx\\lib\\jfx.incubator.richtext.jar",
+        "d:\\Javafx\\lib\\javafx.graphics.jar",
+        "d:\\Javafx\\lib\\jdk.jsobject.jar",
+        "d:\\Javafx\\lib\\javafx.base.jar",
+        "d:\\Javafx\\lib\\javafx.media.jar",
+        "d:\\Javafx\\lib\\jfx.incubator.input.jar"
+    ],
+    "java.configuration.runtimes": [
+        {
+            "name": "JavaSE-25",
+            "path": "C:/Program Files/Java/jdk-25"
+        }
+    ],
+    "javafx.runtime": {
+        "libPath": "D:/Javafx/lib",
+        "modules": "javafx.controls,javafx.fxml,javafx.graphics"
+    }
+}

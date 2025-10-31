@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="fereastraPrinc" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ControllerNewWin">
+   <children>
+      <ColorPicker layoutX="171.0" layoutY="133.0" prefHeight="45.0" prefWidth="258.0" />
+   </children>
+</AnchorPane>
