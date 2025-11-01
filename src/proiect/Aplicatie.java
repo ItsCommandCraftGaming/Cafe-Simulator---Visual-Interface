@@ -95,23 +95,23 @@ public class Aplicatie{
         
     }
 
-    public static void creareContBanca(int meniu, String nume){
-        double moneda;
+    public static void creareContBanca(int selectie, String nume){
+        double sold;
         try{
-            switch (meniu) {
+            switch (selectie) {
                 case 1 -> {
-                    moneda=50;
-                    cont = new ContBancar(nume, moneda, "RON");
+                    sold=50;
+                    cont = new ContBancar(nume, sold, "RON");
                     break;
                 }
                 case 2 -> {
-                    moneda=conversie(50, "RON", "EUR");
-                    cont = new ContBancar(nume, moneda, "EUR");
+                    sold=conversie(50, "RON", "EUR");
+                    cont = new ContBancar(nume, sold, "EUR");
                     break;
                 }
                 case 3 -> {
-                    moneda=conversie(50, "RON", "USD");
-                    cont = new ContBancar(nume, moneda, "USD");
+                    sold=conversie(50, "RON", "USD");
+                    cont = new ContBancar(nume, sold, "USD");
                     break;
                 }
                 default ->{

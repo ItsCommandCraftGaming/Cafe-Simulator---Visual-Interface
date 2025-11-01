@@ -1,26 +1,29 @@
 package view;
 
+//Importuri generate de scene builder
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
+
+//Importuri speciale
+import javafx.scene.input.KeyCode;  //<== pentru recunoastere apasare taste
+import javafx.scene.control.Alert;  //<== pentru prompt-uri
 import javafx.stage.Stage;
 
-//Pentru deschidere de alte fereastre
+
+//Importuri pentru deschidere de alte fereastre
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import java.io.IOException;
+import javax.management.ObjectName;
 
+//Importuri de la proiectul recent
 import proiect.*;
-
-
 
 
 public class Controller {
@@ -30,16 +33,7 @@ public class Controller {
     private Button btn;
 
     @FXML
-    private Button btnReset;
-
-    @FXML
-    private PasswordField fieldPass;
-
-    @FXML
     private TextField fieldUser;
-
-    @FXML
-    private Label labelPass;
 
     @FXML
     private Label labelUser;
@@ -52,21 +46,14 @@ public class Controller {
         login();
 
     }
-    
-    @FXML
-    void clickReset(ActionEvent event) {
-        fieldUser.clear();
-        fieldPass.clear();
 
-    }
 
     @FXML
     void keyEnter(KeyEvent event) {
         if (event.getCode() == KeyCode.ENTER) {
             login();
-
+    
         }
-
     }
 
     public void login(){
@@ -82,32 +69,25 @@ public class Controller {
         alert.showAndWait();
     
         try {
-            // Încarcă noul FXML
+            //Încarcă noul FXML
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/selectBani.fxml"));
             Parent root = loader.load();
 
             //Aici apelam controllerul din cealalta clasa
             ControllerSelBani winBani = loader.getController();
             winBani.setLabelUser(user);
-
-            // Se seteaza stage-ul nou (se lucreaza cu un singur stage))
+        
+            //Se seteaza stage-ul nou (se lucreaza cu un singur stage))
             Stage stage = (Stage) fereastraPrinc.getScene().getWindow();
             Scene newScene = new Scene(root);
             stage.setScene(newScene);
-            stage.setTitle("Fereastra nouă");
+            stage.setTitle("Selectare bani");
             stage.show();
-
-            
-            winBani.setLabelUser(user);
-            
-            
             
         } 
         catch (IOException e) {
             e.printStackTrace();
         }
     }
-
-
 
 }
