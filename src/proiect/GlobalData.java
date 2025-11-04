@@ -4,6 +4,7 @@ public class GlobalData {
     private static String nume;
     private static String moneda;
     private static double sold;
+    private static ThreadViata viata;
 
     public static String getNume(){
         return nume;
@@ -28,4 +29,13 @@ public class GlobalData {
     public static void setSold(double sold){
         GlobalData.sold = sold;
     }
+
+    public static ThreadViata getViata() {
+        return viata;
+    }
+
+    public static void setViata(ThreadViata v) {
+        viata = v;
+    }
+
 }

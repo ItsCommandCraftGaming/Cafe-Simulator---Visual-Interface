@@ -103,24 +103,28 @@ public class ControllerMainWin implements AlbNegru{
 
     @FXML
     public void initialize() {
-        viata = new ThreadViata(15);
-
+        //se verifica thread activ
+        if (GlobalData.getViata() == null) {
+            viata = new ThreadViata(15);
+            viata.start();
+            GlobalData.setViata(viata);
+        } else {
+            viata = GlobalData.getViata();
+        }
         
         new Thread(() -> {
-            viata.start();
-            while (viata.getStatusBar() > 0) {
-                Platform.runLater(() -> {
-                    double sold = GlobalData.getSold();
-                    boxScor.setText("Scor: " + String.valueOf(viata.getScor()));
-                    boxTimp.setText("Timp: " + String.valueOf(viata.getViata()));
-                    boxSuma.setText("Suma: " + String.valueOf(String.format("%.2f", sold)) + " " + GlobalData.getMoneda());
-                    progressTime.setProgress(viata.getStatusBar() / 100.0);
-                });
-                try { Thread.sleep(1000); }
-                catch (InterruptedException e) { e.printStackTrace(); }
+        while (viata.getStatusBar() > 0) {
+            Platform.runLater(() -> {
+                double sold = GlobalData.getSold();
+                boxScor.setText("Scor: " + viata.getScor());
+                boxTimp.setText("Timp: " + viata.getViata());
+                boxSuma.setText("Suma: " + String.format("%.2f", sold) + " " + GlobalData.getMoneda());
+                progressTime.setProgress(viata.getStatusBar() / 100.0);
+            });
+            try { Thread.sleep(1000); } catch (InterruptedException e) { e.printStackTrace(); }
             }
-            Platform.runLater(() -> boxSuma.setText("Game Over! Scor: " + viata.getScor()));
-        }).start();
+                Platform.runLater(() -> boxSuma.setText("Game Over! Scor: " + viata.getScor()));
+            }).start();
     
     }
 

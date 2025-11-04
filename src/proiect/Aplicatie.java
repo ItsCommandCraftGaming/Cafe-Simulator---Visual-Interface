@@ -1,12 +1,16 @@
 package proiect;
 
+import javafx.scene.control.Label;
 import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
+
+
+
 public class Aplicatie{
     private final int nrCafele = 10;
-    private final Cafele[] cafele = new Cafele[nrCafele];
+    final Cafele[] cafele = new Cafele[nrCafele];
     static ContBancar cont;
     static ThreadViata viata;
     static public Jocuri mate, geo;
@@ -86,12 +90,18 @@ public class Aplicatie{
 
     }
 
-    public void afisCafele(){
-            for (int i=0;i<nrCafele;i++){
-                System.out.print((i+1)+". "+cafele[i].getNume()+" | ");
-                System.out.printf("%.2f",conversie(cafele[i].getPret(), "RON", cont.getMoneda()));  //Afisare cu 2 zecimale
-                System.out.println(" "+cont.getMoneda()+" \u001B[42m+"+cafele[i].getViata()+"\u001B[0m");
-            }
+    public void afisCafele(Label[] puncte, Label[] suma){
+            //for (int i=0;i<nrCafele;i++){
+            //    System.out.print((i+1)+". "+cafele[i].getNume()+" | ");
+            //    System.out.printf("%.2f",conversie(cafele[i].getPret(), "RON", cont.getMoneda()));  //Afisare cu 2 zecimale
+            //    System.out.println(" "+cont.getMoneda()+" \u001B[42m+"+cafele[i].getViata()+"\u001B[0m");
+            //}
+
+        for (int i=0;i<nrCafele;i++){
+            puncte[i].setText("+" +String.format("%.2f", cafele[i].getPret()));
+            suma[i].setText(String.valueOf(cafele[i].getViata()) + " " + GlobalData.getMoneda());
+
+        }
         
     }
 
