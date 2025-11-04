@@ -18,6 +18,10 @@ public class ThreadViata extends Thread {
         return this.viata;
     }
 
+    public int getViata(){
+        return this.viata;
+    }
+
     public void oprire(){          //Oprire thread
         ruleaza = false;
     }

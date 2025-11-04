@@ -75,19 +75,19 @@ public class ControllerSelBani{
 
     public void schimbareWindow(){
         try{
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/mainWin.fxml"));
-        Parent root = loader.load();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/mainWin.fxml"));
+            Parent root = loader.load();
 
-        //Aici apelam controllerul din cealalta clasa
-        ControllerMainWin winMain = loader.getController();
-        winMain.setLabelSalut("Salut, " + GlobalData.getNume());
-    
-        //Se seteaza stage-ul nou (se lucreaza cu un singur stage))
-        Stage stage = (Stage) anchBani.getScene().getWindow();
-        Scene newScene = new Scene(root);
-        stage.setScene(newScene);
-        stage.setTitle("Meniu Joc");
-        stage.show();
+            //Aici apelam controllerul din cealalta clasa
+            ControllerMainWin winMain = loader.getController();
+            winMain.setLabelSalut("Salut, " + GlobalData.getNume());
+        
+            //Se seteaza stage-ul nou (se lucreaza cu un singur stage))
+            Stage stage = (Stage) anchBani.getScene().getWindow();
+            Scene newScene = new Scene(root);
+            stage.setScene(newScene);
+            stage.setTitle("Meniu Joc");
+            stage.show();
         }
         catch (IOException e){
             e.printStackTrace();

@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -23,5 +27,37 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
+      <Label fx:id="boxScor" alignment="CENTER_RIGHT" layoutX="531.0" layoutY="89.0" text="Scor: ">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnCafele" layoutX="68.0" layoutY="163.0" mnemonicParsing="false" onAction="#clickCafele" onMouseEntered="#cursorInCafele" onMouseExited="#cursorOutCafele" prefHeight="108.0" prefWidth="206.0" text="Cumparare cafele" wrapText="true">
+         <graphic>
+            <ImageView fx:id="imgCafele" fitHeight="83.0" fitWidth="126.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../poze/4844510.png" />
+               </image>
+               <effect>
+                  <ColorAdjust saturation="-1.0" />
+               </effect>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="btnQuiz" layoutX="325.0" layoutY="163.0" mnemonicParsing="false" onAction="#clickQuiz" onMouseDragEntered="#cursorInQuiz" onMouseDragExited="#cursorOutQuiz" onMouseEntered="#cursorInQuiz" onMouseExited="#cursorOutQuiz" prefHeight="108.0" prefWidth="206.0" text="QUIZ" wrapText="true">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <graphic>
+            <ImageView fx:id="imgQuiz" fitHeight="88.0" fitWidth="131.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../poze/output-onlinepngtools.png" />
+               </image>
+               <effect>
+                  <ColorAdjust saturation="-1.0" />
+               </effect>
+            </ImageView>
+         </graphic>
+      </Button>
    </children>
 </AnchorPane>

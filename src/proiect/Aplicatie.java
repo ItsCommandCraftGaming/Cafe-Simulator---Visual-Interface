@@ -102,16 +102,22 @@ public class Aplicatie{
                 case 1 -> {
                     sold=50;
                     cont = new ContBancar(nume, sold, "RON");
+                    GlobalData.setSold(sold);
+                    GlobalData.setMoneda(cont.getMoneda());
                     break;
                 }
                 case 2 -> {
                     sold=conversie(50, "RON", "EUR");
                     cont = new ContBancar(nume, sold, "EUR");
+                    GlobalData.setSold(sold);
+                    GlobalData.setMoneda(cont.getMoneda());
                     break;
                 }
                 case 3 -> {
                     sold=conversie(50, "RON", "USD");
                     cont = new ContBancar(nume, sold, "USD");
+                    GlobalData.setSold(sold);
+                    GlobalData.setMoneda(cont.getMoneda());
                     break;
                 }
                 default ->{
