@@ -8,10 +8,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane fx:id="anchCafele" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ControllerCafeleWin">
    <children>
-      <Button fx:id="cafea1" layoutX="29.0" layoutY="120.0" mnemonicParsing="false" prefHeight="83.0" prefWidth="103.0" style="-fx-background-radius: 20px; -fx-background-color: #bdbdbd; -fx-border-radius: 20px; -fx-border-color: gray;">
+      <Button fx:id="cafea1" layoutX="29.0" layoutY="120.0" mnemonicParsing="false" onAction="#clickCafea1" prefHeight="83.0" prefWidth="103.0" style="-fx-background-radius: 20px; -fx-background-color: #bdbdbd; -fx-border-radius: 20px; -fx-border-color: gray;">
          <graphic>
             <ImageView fitHeight="66.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -20,7 +19,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="cafea2" layoutX="141.0" layoutY="120.0" mnemonicParsing="false" prefHeight="83.0" prefWidth="103.0" style="-fx-background-radius: 20px; -fx-background-color: #bdbdbd; -fx-border-radius: 20px; -fx-border-color: gray;">
+      <Button fx:id="cafea2" layoutX="141.0" layoutY="120.0" mnemonicParsing="false" onAction="#clickCafea2" prefHeight="83.0" prefWidth="103.0" style="-fx-background-radius: 20px; -fx-background-color: #bdbdbd; -fx-border-radius: 20px; -fx-border-color: gray;">
          <graphic>
             <ImageView fitHeight="66.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -29,7 +28,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="cafea3" layoutX="253.0" layoutY="120.0" mnemonicParsing="false" prefHeight="83.0" prefWidth="103.0" style="-fx-background-radius: 20px; -fx-background-color: #bdbdbd; -fx-border-radius: 20px; -fx-border-color: gray;">
+      <Button fx:id="cafea3" layoutX="253.0" layoutY="120.0" mnemonicParsing="false" onAction="#clickCafea3" prefHeight="83.0" prefWidth="103.0" style="-fx-background-radius: 20px; -fx-background-color: #bdbdbd; -fx-border-radius: 20px; -fx-border-color: gray;">
          <graphic>
             <ImageView fitHeight="66.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -38,7 +37,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="cafea4" layoutX="365.0" layoutY="120.0" mnemonicParsing="false" prefHeight="83.0" prefWidth="103.0" style="-fx-background-radius: 20px; -fx-background-color: #bdbdbd; -fx-border-radius: 20px; -fx-border-color: gray;">
+      <Button fx:id="cafea4" layoutX="365.0" layoutY="120.0" mnemonicParsing="false" onAction="#clickCafea4" prefHeight="83.0" prefWidth="103.0" style="-fx-background-radius: 20px; -fx-background-color: #bdbdbd; -fx-border-radius: 20px; -fx-border-color: gray;">
          <graphic>
             <ImageView fitHeight="66.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -47,7 +46,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="cafea5" layoutX="477.0" layoutY="120.0" mnemonicParsing="false" prefHeight="83.0" prefWidth="103.0" style="-fx-background-radius: 20px; -fx-background-color: #bdbdbd; -fx-border-radius: 20px; -fx-border-color: gray;">
+      <Button fx:id="cafea5" layoutX="477.0" layoutY="120.0" mnemonicParsing="false" onAction="#clickCafea5" prefHeight="83.0" prefWidth="103.0" style="-fx-background-radius: 20px; -fx-background-color: #bdbdbd; -fx-border-radius: 20px; -fx-border-color: gray;">
          <graphic>
             <ImageView fitHeight="66.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -56,7 +55,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="cafea6" layoutX="29.0" layoutY="245.0" mnemonicParsing="false" prefHeight="83.0" prefWidth="103.0" style="-fx-background-radius: 20px; -fx-background-color: #bdbdbd; -fx-border-radius: 20px; -fx-border-color: gray;">
+      <Button fx:id="cafea6" layoutX="29.0" layoutY="245.0" mnemonicParsing="false" onAction="#clickCafea6" prefHeight="83.0" prefWidth="103.0" style="-fx-background-radius: 20px; -fx-background-color: #bdbdbd; -fx-border-radius: 20px; -fx-border-color: gray;">
          <graphic>
             <ImageView fitHeight="66.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -65,7 +64,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="cafea7" layoutX="141.0" layoutY="245.0" mnemonicParsing="false" prefHeight="83.0" prefWidth="103.0" style="-fx-background-radius: 20px; -fx-background-color: #bdbdbd; -fx-border-radius: 20px; -fx-border-color: gray;">
+      <Button fx:id="cafea7" layoutX="141.0" layoutY="245.0" mnemonicParsing="false" onAction="#clickCafea7" prefHeight="83.0" prefWidth="103.0" style="-fx-background-radius: 20px; -fx-background-color: #bdbdbd; -fx-border-radius: 20px; -fx-border-color: gray;">
          <graphic>
             <ImageView fitHeight="66.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -74,7 +73,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="cafea8" layoutX="253.0" layoutY="245.0" mnemonicParsing="false" prefHeight="83.0" prefWidth="103.0" style="-fx-background-radius: 20px; -fx-background-color: #bdbdbd; -fx-border-radius: 20px; -fx-border-color: gray;">
+      <Button fx:id="cafea8" layoutX="253.0" layoutY="245.0" mnemonicParsing="false" onAction="#clickCafea8" prefHeight="83.0" prefWidth="103.0" style="-fx-background-radius: 20px; -fx-background-color: #bdbdbd; -fx-border-radius: 20px; -fx-border-color: gray;">
          <graphic>
             <ImageView fitHeight="66.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -83,7 +82,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="cafea9" layoutX="365.0" layoutY="245.0" mnemonicParsing="false" prefHeight="83.0" prefWidth="103.0" style="-fx-background-radius: 20px; -fx-background-color: #bdbdbd; -fx-border-radius: 20px; -fx-border-color: gray;">
+      <Button fx:id="cafea9" layoutX="365.0" layoutY="245.0" mnemonicParsing="false" onAction="#clickCafea9" prefHeight="83.0" prefWidth="103.0" style="-fx-background-radius: 20px; -fx-background-color: #bdbdbd; -fx-border-radius: 20px; -fx-border-color: gray;">
          <graphic>
             <ImageView fitHeight="66.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -92,7 +91,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="cafea10" layoutX="477.0" layoutY="245.0" mnemonicParsing="false" prefHeight="83.0" prefWidth="103.0" style="-fx-background-radius: 20px; -fx-background-color: #bdbdbd; -fx-border-radius: 20px; -fx-border-color: gray;">
+      <Button fx:id="cafea10" layoutX="477.0" layoutY="245.0" mnemonicParsing="false" onAction="#clickCafea10" prefHeight="83.0" prefWidth="103.0" style="-fx-background-radius: 20px; -fx-background-color: #bdbdbd; -fx-border-radius: 20px; -fx-border-color: gray;">
          <graphic>
             <ImageView fitHeight="66.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -177,54 +176,54 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Label fx:id="suma1" alignment="CENTER_RIGHT" layoutX="47.0" layoutY="182.0" prefHeight="35.0" prefWidth="106.0" text="Suma" textFill="#ff0d00">
+      <Label fx:id="suma1" alignment="CENTER_RIGHT" layoutX="31.0" layoutY="184.0" prefHeight="35.0" prefWidth="106.0" text="Suma" textFill="#ff0d00">
          <font>
-            <Font name="System Bold" size="24.0" />
+            <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="suma2" alignment="CENTER_RIGHT" layoutX="148.0" layoutY="182.0" prefHeight="35.0" prefWidth="106.0" text="Suma" textFill="#ff0d00">
+      <Label fx:id="suma2" alignment="CENTER_RIGHT" layoutX="132.0" layoutY="184.0" prefHeight="35.0" prefWidth="106.0" text="Suma" textFill="#ff0d00">
          <font>
-            <Font name="System Bold" size="24.0" />
+            <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="suma3" alignment="CENTER_RIGHT" layoutX="255.0" layoutY="182.0" prefHeight="35.0" prefWidth="106.0" text="Suma" textFill="#ff0d00">
+      <Label fx:id="suma3" alignment="CENTER_RIGHT" layoutX="239.0" layoutY="184.0" prefHeight="35.0" prefWidth="106.0" text="Suma" textFill="#ff0d00">
          <font>
-            <Font name="System Bold" size="24.0" />
+            <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="suma4" alignment="CENTER_RIGHT" layoutX="356.0" layoutY="182.0" prefHeight="35.0" prefWidth="106.0" text="Suma" textFill="#ff0d00">
+      <Label fx:id="suma4" alignment="CENTER_RIGHT" layoutX="340.0" layoutY="184.0" prefHeight="35.0" prefWidth="106.0" text="Suma" textFill="#ff0d00">
          <font>
-            <Font name="System Bold" size="24.0" />
+            <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="suma5" alignment="CENTER_RIGHT" layoutX="478.0" layoutY="182.0" prefHeight="35.0" prefWidth="106.0" text="Suma" textFill="#ff0d00">
+      <Label fx:id="suma5" alignment="CENTER_RIGHT" layoutX="462.0" layoutY="184.0" prefHeight="35.0" prefWidth="106.0" text="Suma" textFill="#ff0d00">
          <font>
-            <Font name="System Bold" size="24.0" />
+            <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="suma6" alignment="CENTER_RIGHT" layoutX="48.0" layoutY="310.0" prefHeight="35.0" prefWidth="106.0" text="Suma" textFill="#ff0d00">
+      <Label fx:id="suma6" alignment="CENTER_RIGHT" layoutX="32.0" layoutY="312.0" prefHeight="35.0" prefWidth="106.0" text="Suma" textFill="#ff0d00">
          <font>
-            <Font name="System Bold" size="24.0" />
+            <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="suma7" alignment="CENTER_RIGHT" layoutX="149.0" layoutY="310.0" prefHeight="35.0" prefWidth="106.0" text="Suma" textFill="#ff0d00">
+      <Label fx:id="suma7" alignment="CENTER_RIGHT" layoutX="133.0" layoutY="312.0" prefHeight="35.0" prefWidth="106.0" text="Suma" textFill="#ff0d00">
          <font>
-            <Font name="System Bold" size="24.0" />
+            <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="suma8" alignment="CENTER_RIGHT" layoutX="256.0" layoutY="310.0" prefHeight="35.0" prefWidth="106.0" text="Suma" textFill="#ff0d00">
+      <Label fx:id="suma8" alignment="CENTER_RIGHT" layoutX="240.0" layoutY="312.0" prefHeight="35.0" prefWidth="106.0" text="Suma" textFill="#ff0d00">
          <font>
-            <Font name="System Bold" size="24.0" />
+            <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="suma9" alignment="CENTER_RIGHT" layoutX="357.0" layoutY="310.0" prefHeight="35.0" prefWidth="106.0" text="Suma" textFill="#ff0d00">
+      <Label fx:id="suma9" alignment="CENTER_RIGHT" layoutX="341.0" layoutY="312.0" prefHeight="35.0" prefWidth="106.0" text="Suma" textFill="#ff0d00">
          <font>
-            <Font name="System Bold" size="24.0" />
+            <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="suma10" alignment="CENTER_RIGHT" layoutX="479.0" layoutY="310.0" prefHeight="35.0" prefWidth="106.0" text="Suma" textFill="#ff0d00">
+      <Label fx:id="suma10" alignment="CENTER_RIGHT" layoutX="463.0" layoutY="312.0" prefHeight="35.0" prefWidth="106.0" text="Suma" textFill="#ff0d00">
          <font>
-            <Font name="System Bold" size="24.0" />
+            <Font name="System Bold" size="14.0" />
          </font>
       </Label>
       <Label fx:id="boxTimp" alignment="CENTER" layoutX="254.0" layoutY="4.0" prefHeight="18.0" prefWidth="92.0" text="Timp: ">

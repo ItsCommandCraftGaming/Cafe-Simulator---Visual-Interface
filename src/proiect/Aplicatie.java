@@ -73,10 +73,13 @@ public class Aplicatie{
         Random rn = new Random();  //Suma random
         double min = 10;
         double max = 30;
+        double pret;
 
         if (cafele[0]==null){  //Daca nu a fost creat pana acuma
             for (int i=0;i<nrCafele;i++){
                 cafele[i] = new Cafele(numeCafele[i], rn.nextDouble(min,max), (int) rn.nextDouble(min,max)/2);
+
+                
             }
 
         }
@@ -84,6 +87,8 @@ public class Aplicatie{
             for (int i=0;i<nrCafele;i++){
                 cafele[i].setPret(rn.nextDouble(min,max));
                 cafele[i].setViata((int) rn.nextDouble(min,max)/2);
+
+                
 
             }
         }
@@ -98,8 +103,13 @@ public class Aplicatie{
             //}
 
         for (int i=0;i<nrCafele;i++){
-            puncte[i].setText("+" +String.format("%.2f", cafele[i].getPret()));
-            suma[i].setText(String.valueOf(cafele[i].getViata()) + " " + GlobalData.getMoneda());
+            double pret = conversie(cafele[i].getPret(), "RON", GlobalData.getMoneda());
+
+            suma[i].setText(String.format("%.2f", pret) + " " + GlobalData.getMoneda());
+            puncte[i].setText("+" + String.valueOf(cafele[i].getViata()));
+
+            GlobalData.setSumaCafele(pret, i);
+            GlobalData.setPuncteCafele(cafele[i].getViata(), i);
 
         }
         

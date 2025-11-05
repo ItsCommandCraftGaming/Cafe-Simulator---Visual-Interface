@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
@@ -96,10 +97,17 @@ public class ControllerMainWin implements AlbNegru{
         boxSalut.setText(numeUser);
     }
 
+    public void setLabelSuma(String suma){
+        boxSuma.setText(suma);
+    }
+
     @FXML
     private ProgressBar progressTime;
 
     private ThreadViata viata;
+
+    boolean play = true;
+
 
     @FXML
     public void initialize() {
@@ -123,9 +131,29 @@ public class ControllerMainWin implements AlbNegru{
             });
             try { Thread.sleep(1000); } catch (InterruptedException e) { e.printStackTrace(); }
             }
-                Platform.runLater(() -> boxSuma.setText("Game Over! Scor: " + viata.getScor()));
+                //Platform.runLater(() -> boxSuma.setText("Game Over! Scor: " + viata.getScor()));
+                if (play && viata.getViata()<=0){
+                play = false;
+                inchide();
+            }
             }).start();
     
+    }
+
+    public void inchide() {
+        Platform.runLater(() -> {
+            Stage stage = (Stage) fereastraPrinc.getScene().getWindow();
+            if (stage != null) {
+                stage.close();
+            }
+            
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("GAME OVER!!!");
+            alert.setHeaderText(null);
+            alert.setContentText("Jocul s-a terminat. Timp expirat");
+            alert.showAndWait();
+            
+        });
     }
 
     @FXML
