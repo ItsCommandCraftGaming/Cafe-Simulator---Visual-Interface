@@ -7,6 +7,8 @@ public class GlobalData {
     private static ThreadViata viata;
     private static final int[] puncteCafele = new int[10];
     private static final double[] sumaCafele = new double[10];
+    private static int errorCount=0;
+
 
     public static String getNume(){
         return nume;
@@ -58,6 +60,14 @@ public class GlobalData {
 
     public static double getSumaCafele(int i){
         return GlobalData.sumaCafele[i];
+    }
+
+    public static void addError(){
+        GlobalData.errorCount++;
+    }
+
+    public static int getErrorCount(){
+        return errorCount;
     }
 
 }

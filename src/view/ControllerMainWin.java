@@ -25,8 +25,10 @@ import javafx.scene.Scene;
 import java.io.IOException;
 import java.util.stream.Stream;
 
+import fileService.DataWriteManager;
 import interfete.AlbNegru;
 import proiect.*;
+import fileService.*;
 
 public class ControllerMainWin implements AlbNegru{
 
@@ -130,6 +132,7 @@ public class ControllerMainWin implements AlbNegru{
                 boxScor.setText("Scor: " + viata.getScor());
                 boxTimp.setText("Timp: " + viata.getViata());
                 boxSuma.setText("Suma: " + String.format("%.2f", sold) + " " + GlobalData.getMoneda());
+                boxSalut.setText("Salut, " + GlobalData.getNume());
                 progressTime.setProgress(viata.getStatusBar() / 100.0);
 
                 //culoare bara
@@ -152,6 +155,8 @@ public class ControllerMainWin implements AlbNegru{
     
     }
 
+    private static boolean dateSalvate = false;
+
     public void inchide() {
         Platform.runLater(() -> {
             Stage stage = (Stage) fereastraPrinc.getScene().getWindow();
@@ -159,13 +164,23 @@ public class ControllerMainWin implements AlbNegru{
                 stage.close();
             }
             
+            if (!dateSalvate) {
+                DataWriteManager dwm = new DataWriteManager();
+                dwm.scrieFisier("Nume->" + GlobalData.getNume() + "\nScor->" + viata.getScor() + "\n---");
+                dateSalvate = true;
+            }
+            
+            
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("GAME OVER!!!");
             alert.setHeaderText(null);
             alert.setContentText("Jocul s-a terminat. Timp expirat");
             alert.showAndWait();
             
+            
+            
         });
+        GlobalData.addError();
     }
 
 

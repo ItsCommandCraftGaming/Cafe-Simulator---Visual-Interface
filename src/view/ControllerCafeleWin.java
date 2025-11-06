@@ -36,6 +36,9 @@ public class ControllerCafeleWin {
     private Label boxTimp;
 
     @FXML
+    private Button btnIesire;
+
+    @FXML
     private Button cafea1;
 
     @FXML
@@ -142,6 +145,12 @@ public class ControllerCafeleWin {
 
     }
 
+    @FXML
+    void clkIesire(ActionEvent event) {
+        tranzitie();
+    }
+
+
     public void submitClick(int i){
         try{
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/mainWin.fxml"));
@@ -176,6 +185,7 @@ public class ControllerCafeleWin {
     }
 
     boolean play = true;
+
     
     @FXML
     public void initialize() {
@@ -202,6 +212,7 @@ public class ControllerCafeleWin {
                     boxScor.setText("Scor: " + viata.getScor());
                     boxTimp.setText("Timp: " + viata.getViata());
                     boxSuma.setText("Suma: " + String.format("%.2f", sold) + " " + GlobalData.getMoneda());
+                    boxSalut.setText("Salut, " + GlobalData.getNume());
                     progressTime.setProgress(viata.getStatusBar() / 100.0);
 
                     //culoare bara
@@ -228,6 +239,7 @@ public class ControllerCafeleWin {
             if (stage != null) {
                 stage.close();
             }
+
             
             //Alert alert = new Alert(Alert.AlertType.INFORMATION);
             //alert.setTitle("GAME OVER!!!");
@@ -236,6 +248,7 @@ public class ControllerCafeleWin {
             //alert.showAndWait();
             
         });
+        //GlobalData.addError();
     }
 
 
@@ -288,6 +301,27 @@ public class ControllerCafeleWin {
     @FXML
     void clickCafea10(ActionEvent event) {
         submitClick(9);
+    }
+
+    public void tranzitie(){
+        try{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/mainWin.fxml"));
+            Parent root = loader.load();
+
+            //Aici apelam controllerul din cealalta clasa
+            //ControllerMainWin winMain = loader.getController();
+            //winMain.setLabelSalut("Salut, " + GlobalData.getNume());
+        
+            //Se seteaza stage-ul nou (se lucreaza cu un singur stage))
+            Stage stage = (Stage) anchCafele.getScene().getWindow();
+            Scene newScene = new Scene(root);
+            stage.setScene(newScene);
+            stage.setTitle("Fereastra principala");
+            stage.show();
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
     }
 
 

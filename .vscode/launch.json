@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "DataReadManager",
+      "request": "launch",
+      "mainClass": "fileService.DataReadManager",
+      "projectName": "java-vis_56c18996"
+    },
+    {
+      "type": "java",
       "name": "Launch JavaFX",
       "request": "launch",
       "mainClass": "Main",

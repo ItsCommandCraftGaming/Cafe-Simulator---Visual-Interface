@@ -231,5 +231,14 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
+      <Button fx:id="btnIesire" layoutY="374.0" mnemonicParsing="false" onAction="#clkIesire" text="Iesire">
+         <graphic>
+            <ImageView fitHeight="18.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../poze/return-57.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
    </children>
 </AnchorPane>

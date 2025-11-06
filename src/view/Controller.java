@@ -1,6 +1,7 @@
 package view;
 
 //Importuri generate de scene builder
+import fileService.DataReadManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -20,10 +21,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import java.io.IOException;
-import javax.management.ObjectName;
 
 //Importuri de la proiectul recent
 import proiect.*;
+import fileService.*;
 
 
 public class Controller {
@@ -31,6 +32,9 @@ public class Controller {
 
     @FXML
     private Button btn;
+
+    @FXML
+    private Button btnClasament;
 
     @FXML
     private TextField fieldUser;
@@ -54,6 +58,36 @@ public class Controller {
             login();
     
         }
+    }
+
+    @FXML
+    void clkClasament(ActionEvent event) {
+        DataReadManager manager = new DataReadManager();
+        manager.citireFisier();
+
+        try {
+            //Încarcă noul FXML
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/tabelJucatori.fxml"));
+            Parent root = loader.load();
+
+            //Aici apelam controllerul din cealalta clasa
+            ControllerJucatoriWin winJucatori = loader.getController();
+            winJucatori.setListaJucatori(manager.getJucatori());
+
+
+            //Se seteaza stage-ul nou (se lucreaza cu un singur stage))
+            Stage stage = new Stage();
+            Scene newScene = new Scene(root);
+            stage.setScene(newScene);
+            stage.setTitle("Clasament");
+            stage.show();
+            
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        
     }
 
     public void login(){

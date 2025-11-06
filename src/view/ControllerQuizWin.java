@@ -192,6 +192,7 @@ public class ControllerQuizWin {
 
     boolean play = true;
 
+
     @FXML
     public void initialize() {
         //se verifica thread activ
@@ -210,6 +211,7 @@ public class ControllerQuizWin {
                 boxScor.setText("Scor: " + viata.getScor());
                 boxTimp.setText("Timp: " + viata.getViata());
                 boxSuma.setText("Suma: " + String.format("%.2f", sold) + " " + GlobalData.getMoneda());
+                boxSalut.setText("Salut, " + GlobalData.getNume());
                 progressTime.setProgress(viata.getStatusBar() / 100.0);
 
                 //culoare bara
@@ -238,6 +240,8 @@ public class ControllerQuizWin {
                 stage.close();
             }
             
+            
+            
             //Alert alert = new Alert(Alert.AlertType.INFORMATION);
             //alert.setTitle("GAME OVER!!!");
             //alert.setHeaderText(null);
@@ -245,6 +249,7 @@ public class ControllerQuizWin {
             //alert.showAndWait();
             
         });
+        GlobalData.addError();
     }
 
 }

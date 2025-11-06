@@ -1,0 +1,6 @@
+Nume->Miai
+Scor->515
+---
+Nume->Jojo
+Scor->75
+---
