@@ -150,7 +150,18 @@ public class ControllerCafeleWin {
             //Aici apelam controllerul din cealalta clasa
             //ControllerMainWin winMain = loader.getController();
 
-            GlobalData.modSold(-GlobalData.getSumaCafele(i));
+            if (GlobalData.getSold()>=GlobalData.getSumaCafele(i)){
+                GlobalData.modSold(-GlobalData.getSumaCafele(i));
+                viata.addViata(GlobalData.getPuncteCafele(i));
+
+            }
+            else{
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Sold insuficient");
+                alert.setHeaderText(null);
+                alert.setContentText("Nu ai destui bani!");
+                alert.showAndWait();
+            }
         
             //Se seteaza stage-ul nou (se lucreaza cu un singur stage))
             Stage stage = (Stage) anchCafele.getScene().getWindow();

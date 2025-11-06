@@ -59,5 +59,23 @@
             </ImageView>
          </graphic>
       </Button>
+      <Button fx:id="btnMate" layoutX="308.0" layoutY="257.0" mnemonicParsing="false" onAction="#clickMate" opacity="0.0" prefHeight="45.0" prefWidth="105.0" text="Mate">
+         <graphic>
+            <ImageView fitHeight="37.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../poze/3471391.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="btnGeo" layoutX="442.0" layoutY="257.0" mnemonicParsing="false" onAction="#clickGeo" opacity="0.0" prefHeight="45.0" prefWidth="105.0" text="Geogra">
+         <graphic>
+            <ImageView fitHeight="35.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../poze/4936151.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
    </children>
 </AnchorPane>

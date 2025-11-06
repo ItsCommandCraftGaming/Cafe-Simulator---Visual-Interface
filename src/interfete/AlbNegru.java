@@ -1,4 +1,4 @@
-package proiect;
+package interfete;
 
 import javafx.scene.image.ImageView;
 

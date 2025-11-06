@@ -25,6 +25,7 @@ import javafx.scene.Scene;
 import java.io.IOException;
 import java.util.stream.Stream;
 
+import interfete.AlbNegru;
 import proiect.*;
 
 public class ControllerMainWin implements AlbNegru{
@@ -101,6 +102,8 @@ public class ControllerMainWin implements AlbNegru{
         boxSuma.setText(suma);
     }
 
+
+    //functionalitate thread
     @FXML
     private ProgressBar progressTime;
 
@@ -156,6 +159,8 @@ public class ControllerMainWin implements AlbNegru{
         });
     }
 
+
+    //prima obtiune (cafele)
     @FXML
     void clickCafele(ActionEvent event) {
         try{
@@ -179,10 +184,80 @@ public class ControllerMainWin implements AlbNegru{
 
     }
 
+    
+
+    @FXML
+    private Button btnGeo;
+
+    @FXML
+    private Button btnMate;
+
+    //obtiunea 2 (quiz-uri)
+    int deschis = 0;
     @FXML
     void clickQuiz(ActionEvent event) {
+        if (deschis == 0){
+            deschis = 1;
+        }
+        else{
+            deschis = 0;
+        }
+        
+        btnGeo.setOpacity(deschis);
+        btnMate.setOpacity(deschis);
+    }
+
+    //quiz-uri (geografie)
+    @FXML
+    void clickGeo(ActionEvent event) {
+        try{
+            
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/quizWin.fxml"));
+            Parent root = loader.load();
+
+            //Aici apelam controllerul din cealalta clasa
+            ControllerQuizWin winQuiz = loader.getController();
+            winQuiz.initQuiz("geo");
+            
+        
+            //Se seteaza stage-ul nou (se lucreaza cu un singur stage))
+            Stage stage = (Stage) fereastraPrinc.getScene().getWindow();
+            Scene newScene = new Scene(root);
+            stage.setScene(newScene);
+            stage.setTitle("QUIZ Geografie");
+            stage.show();
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+        
 
 
+    }
+
+    //quiz-uri (matematica)
+    @FXML
+    void clickMate(ActionEvent event) {
+        try{
+            
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/quizWin.fxml"));
+            Parent root = loader.load();
+
+            //Aici apelam controllerul din cealalta clasa
+            ControllerQuizWin winQuiz = loader.getController();
+            winQuiz.initQuiz("mate");
+            
+        
+            //Se seteaza stage-ul nou (se lucreaza cu un singur stage))
+            Stage stage = (Stage) fereastraPrinc.getScene().getWindow();
+            Scene newScene = new Scene(root);
+            stage.setScene(newScene);
+            stage.setTitle("QUIZ Matematica");
+            stage.show();
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
     }
 
 }
