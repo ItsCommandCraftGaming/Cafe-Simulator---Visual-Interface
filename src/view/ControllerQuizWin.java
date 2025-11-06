@@ -211,6 +211,14 @@ public class ControllerQuizWin {
                 boxTimp.setText("Timp: " + viata.getViata());
                 boxSuma.setText("Suma: " + String.format("%.2f", sold) + " " + GlobalData.getMoneda());
                 progressTime.setProgress(viata.getStatusBar() / 100.0);
+
+                //culoare bara
+                if (viata.getViata()>=10){
+                    progressTime.setStyle("-fx-accent: #4c91afff");
+                }
+                else if (viata.getViata()<10){
+                    progressTime.setStyle("-fx-accent: #ff0000ff");
+                }
             });
             try { Thread.sleep(1000); } catch (InterruptedException e) { e.printStackTrace(); }
             }
@@ -230,11 +238,11 @@ public class ControllerQuizWin {
                 stage.close();
             }
             
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("GAME OVER!!!");
-            alert.setHeaderText(null);
-            alert.setContentText("Jocul s-a terminat. Timp expirat");
-            alert.showAndWait();
+            //Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            //alert.setTitle("GAME OVER!!!");
+            //alert.setHeaderText(null);
+            //alert.setContentText("Jocul s-a terminat. Timp expirat");
+            //alert.showAndWait();
             
         });
     }

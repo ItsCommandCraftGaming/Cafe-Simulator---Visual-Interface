@@ -13,6 +13,7 @@ public class Main extends Application {
         Scene scene = new Scene(root, 600, 400);
         stage.setTitle("JavaFX GUI");
         stage.setScene(scene);
+        stage.setResizable(false);  //blocam redimensionarea
         stage.show();
     }
 

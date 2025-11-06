@@ -131,15 +131,24 @@ public class ControllerMainWin implements AlbNegru{
                 boxTimp.setText("Timp: " + viata.getViata());
                 boxSuma.setText("Suma: " + String.format("%.2f", sold) + " " + GlobalData.getMoneda());
                 progressTime.setProgress(viata.getStatusBar() / 100.0);
+
+                //culoare bara
+                if (viata.getViata()>=10){
+                    progressTime.setStyle("-fx-accent: #4c91afff");
+                }
+                else if (viata.getViata()<10){
+                    progressTime.setStyle("-fx-accent: #ff0000ff");
+                }
             });
             try { Thread.sleep(1000); } catch (InterruptedException e) { e.printStackTrace(); }
             }
-                //Platform.runLater(() -> boxSuma.setText("Game Over! Scor: " + viata.getScor()));
-                if (play && viata.getViata()<=0){
+
+            if (play && viata.getViata()<=0){
                 play = false;
                 inchide();
+                
             }
-            }).start();
+        }).start();
     
     }
 
@@ -205,6 +214,14 @@ public class ControllerMainWin implements AlbNegru{
         
         btnGeo.setOpacity(deschis);
         btnMate.setOpacity(deschis);
+        if (deschis == 0){
+            btnGeo.setDisable(true);
+            btnMate.setDisable(true);
+        }
+        else{
+            btnGeo.setDisable(false);
+            btnMate.setDisable(false);
+        }
     }
 
     //quiz-uri (geografie)
